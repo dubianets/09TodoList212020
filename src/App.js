@@ -46,7 +46,7 @@ const [list, setList] = useState(initialElement)
             <hr/>
 
             {list.map(el => <ListCounter doneChanger={doneChanger} deleteElement={deleteElement} el={el}/>)}
-
+<hr/>
         </div>
     )
 }
