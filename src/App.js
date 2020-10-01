@@ -38,6 +38,16 @@ const [list, setList] = useState(initialElement)
         setList(newList);
     }
 
+    const switchElements = (index, value) => {
+     const newList = [...list]
+        const CurrentElement  = newList[index];
+             const newElement = newList[index + value];
+             newList[index + value] = CurrentElement;
+             newList[index] = newElement;
+             setList(newList)
+         }
+
+
     return (
 
         <div>
@@ -45,7 +55,7 @@ const [list, setList] = useState(initialElement)
             <ApperCase addElement={addElement}/>
             <hr/>
 
-            {list.map(el => <ListCounter doneChanger={doneChanger} deleteElement={deleteElement} el={el}/>)}
+            {list.map((el,index) => <ListCounter list={list} switchElements={switchElements} index={index} doneChanger={doneChanger} deleteElement={deleteElement} el={el}/>)}
 <hr/>
         </div>
     )

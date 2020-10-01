@@ -14,6 +14,8 @@ function ListCounter(props) {
                 {props.el.secondName}
                 <button onClick={() => props.deleteElement(props.el.id)}>delet</button>
                 <button onClick={() =>props.doneChanger(props.el.id)}>done</button>
+            <button onClick={() => props.switchElements(props.index,-1)} disabled={props.index === 0}>up</button>
+            <button onClick={() => props.switchElements(props.index,1)} disabled={props.index === props.list.length -1}>do</button>
 
 
 
